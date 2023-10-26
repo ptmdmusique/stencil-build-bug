@@ -1,12 +1,12 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Element, Prop, h } from '@stencil/core';
 import { format } from '../../utils/utils';
 
 @Component({
   tag: 'my-component',
   styleUrl: 'my-component.css',
-  shadow: true,
 })
 export class MyComponent {
+  @Element() el: HTMLMyComponentElement;
   /**
    * The first name
    */
@@ -24,6 +24,10 @@ export class MyComponent {
 
   private getText(): string {
     return format(this.first, this.middle, this.last);
+  }
+
+  componentWillLoad() {
+    document.createElement('my-component');
   }
 
   render() {
