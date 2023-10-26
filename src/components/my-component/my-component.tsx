@@ -1,4 +1,4 @@
-import { Component, Element, Prop, h } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 import { format } from '../../utils/utils';
 
 @Component({
@@ -6,7 +6,6 @@ import { format } from '../../utils/utils';
   styleUrl: 'my-component.css',
 })
 export class MyComponent {
-  @Element() el: HTMLMyComponentElement;
   /**
    * The first name
    */
